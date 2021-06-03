@@ -38,9 +38,10 @@ export const theme = {
     },
   },
   fonts: {
-    body: "Oswald_400Regular",
+    body: "Roboto_400Regular",
     heading: "Lato_400Regular",
-    monospace: "Oswald_400Regular",
+    headingBold: "Lato_700Bold",
+    monospace: "Roboto_400Regular",
   },
   fontWeights: {
     regular: 400,
@@ -48,7 +49,7 @@ export const theme = {
     bold: 700,
   },
   fontSizes: {
-    caption: "12px",
+    caption: "14px",
     button: "14px",
     body: "16px",
     title: "20px",

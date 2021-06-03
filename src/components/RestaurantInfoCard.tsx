@@ -1,10 +1,21 @@
 import React from "react";
-import { Text } from "react-native";
+import { Text, View } from "react-native";
+import { SvgXml } from "react-native-svg";
 
 /**
  * Imports MUI Components
  */
 import { Card } from "react-native-paper";
+
+/**
+ * Imports Components
+ */
+import { RestaurantRating } from "./RestaurantRating";
+
+/**
+ * Imports assets
+ */
+import open from "../../assets/open";
 
 /**
  * Imports styling
@@ -25,6 +36,66 @@ export interface RestaurantInfoCardProps {
 }
 
 /**
+ * Styles the open image
+ */
+const OpenImage = styled(SvgXml)`
+  ${(props) => {
+    const { theme } = props;
+
+    return `
+    position: absolute;
+    right: 5px;
+    top: -15px;
+`;
+  }}
+`;
+
+/**
+ * Styles the title
+ */
+const StatusContainer = styled(View)`
+  ${(props) => {
+    const { theme } = props;
+
+    return `
+   flex-direction: row;
+   justify-content: space-between;
+   position: relative;
+`;
+  }}
+`;
+
+/**
+ * Styles the info container
+ */
+const InfoContainer = styled(View)`
+  ${(props) => {
+    const { theme } = props;
+
+    return `
+ color: ${theme.palette.text.primary};
+ font-size: ${theme.fontSizes.body};
+ font-family: ${theme.fonts.body}
+`;
+  }}
+`;
+
+/**
+ * Styles the title
+ */
+const WarningText = styled(Text)`
+  ${(props) => {
+    const { theme } = props;
+
+    return `
+ color: ${theme.palette.ui.error};
+ font-size: ${theme.fontSizes.body};
+ font-family: ${theme.fonts.headingBold};
+`;
+  }}
+`;
+
+/**
  * Styles the title
  */
 const Title = styled(Text)`
@@ -33,7 +104,24 @@ const Title = styled(Text)`
 
     return `
   color: ${theme.palette.text.primary};
-  font-size: ${theme.fontSizes.body};
+  font-size: ${theme.fontSizes.title};
+  font-family: ${theme.fonts.headingBold};
+  padding-bottom: ${theme.space[1]};
+`;
+  }}
+`;
+
+/**
+ * Styles the address
+ */
+const Address = styled(Text)`
+  ${(props) => {
+    const { theme } = props;
+
+    return `
+ color: ${theme.palette.text.primary};
+ font-size: ${theme.fontSizes.caption};
+ font-family: ${theme.fonts.headingBold}
 `;
   }}
 `;
@@ -90,7 +178,16 @@ export const RestaurantInfoCard: React.FC<RestaurantInfoCardProps> = (
           uri: photos[0],
         }}
       />
-      <Title>{name}</Title>
+      <InfoContainer>
+        <Title>{name}</Title>
+        <StatusContainer>
+          <RestaurantRating rating={rating} />
+          {isClosedTemporarily && <WarningText>Closed Temporarily</WarningText>}
+          {isOpenNow && <OpenImage xml={open} width={50} height={50} />}
+        </StatusContainer>
+
+        <Address>{address}</Address>
+      </InfoContainer>
     </RestaurantCard>
   );
 };

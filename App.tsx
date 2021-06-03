@@ -17,9 +17,27 @@ import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/themes/theme";
 
 /**
+ * Imports fonts
+ */
+import {
+  useFonts as useRobotoFont,
+  Roboto_400Regular,
+} from "@expo-google-fonts/roboto";
+import {
+  useFonts as useLatoFont,
+  Lato_400Regular,
+  Lato_700Bold,
+} from "@expo-google-fonts/lato";
+
+/**
  * Displays the component
  */
 const App: React.FC = () => {
+  const [robotoLoaded] = useRobotoFont({ Roboto_400Regular });
+  const [latoLoaded] = useLatoFont({ Lato_400Regular, Lato_700Bold });
+
+  if (!robotoLoaded || !latoLoaded) return null;
+
   return (
     <ThemeProvider theme={theme}>
       <RestaurantsScreen />
