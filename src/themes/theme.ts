@@ -6,7 +6,7 @@ export const theme = {
     brand: {
       primary: "#2182BD",
       secondary: "#5282BD",
-      muted: "#C6DAF7",
+      muted: "#C6DAF7"
     },
     ui: {
       primary: "#262626",
@@ -15,14 +15,14 @@ export const theme = {
       quaternary: "#FFFFFF",
       disabled: "#DEDEDE",
       error: "#D0421B",
-      success: "#138000",
+      success: "#138000"
     },
     bg: {
       primary: "#FFFFFF",
-      secondary: "#F1F1F1",
+      secondary: "#F1F1F1"
     },
     border: {
-      primary: "#f8f8f8",
+      primary: "#f8f8f8"
     },
     text: {
       primary: "#262626",
@@ -30,41 +30,42 @@ export const theme = {
       disabled: "#9C9C9C",
       inverse: "#FFFFFF",
       error: "#D0421B",
-      success: "#138000",
+      success: "#138000"
     },
     common: {
       white: "#fff",
-      black: "#000",
-    },
+      black: "#000"
+    }
   },
   fonts: {
     body: "Roboto_400Regular",
     heading: "Lato_400Regular",
     headingBold: "Lato_700Bold",
-    monospace: "Roboto_400Regular",
+    monospace: "Roboto_400Regular"
   },
   fontWeights: {
     regular: 400,
     medium: 500,
-    bold: 700,
+    bold: 700
   },
   fontSizes: {
     caption: "14px",
     button: "14px",
     body: "16px",
+    subtitle: "18px",
     title: "20px",
     h5: "24px",
     h4: "34px",
     h3: "45px",
     h2: "56px",
-    h1: "112px",
+    h1: "112px"
   },
   sizes: ["8px", "16px", "32px", "64px", "128px"],
   lineHeights: {
     title: "28px",
-    copy: "20px",
+    copy: "20px"
   },
-  space: ["0px", "4px", "8px", "16px", "32px", "64px"],
+  space: ["0px", "4px", "8px", "16px", "32px", "64px"]
 };
 
 export type Theme = typeof theme;
