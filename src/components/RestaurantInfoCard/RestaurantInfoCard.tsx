@@ -15,7 +15,7 @@ import {
   InfoContainer,
   WarningText,
   RestaurantCard,
-  RestaurantCover
+  RestaurantCover,
 } from "./RestaurantInfoCard.styles";
 
 /**
@@ -45,7 +45,7 @@ export const RestaurantInfoCard: React.FC<RestaurantInfoCardProps> = (
       <RestaurantCover
         key={name}
         source={{
-          uri: photos[0]
+          uri: photos[0],
         }}
       />
       <InfoContainer>
